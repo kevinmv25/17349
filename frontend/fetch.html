@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api fetch</title>
+</head>
+<body>
+    <h1>Api Fetch</h1>
+    <button onclick="llamar()">Fetch</button>
+    <button onclick="llamar2()">Ajax</button
+    <button onclick="llamar3()">Fetch Async/await</button>>
+
+    <div id="demo"></div>
+
+    <script>
+        /*
+        function llamar(){
+            let URL = "https://jsonplaceholder.typicode.com/users/1"
+            let parametros = ""
+            fetch(URL)
+            .then( respuesta => {
+                console.log(respuesta.status)
+                let datos = respuesta.json() //deserializa la petición 
+                console.log(datos)
+                return datos
+
+            })
+            .then( 
+                datos => {
+                    console.log(datos)  
+                }
+            )
+            .catch(error => {
+                console.log("ojo:" + error)
+            })
+        }
+        /*
+        /*
+        function llamar2(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onload = respuesta => {
+                console.log( JSON.parse( xhttp.responseText ) )
+                document.getElementById("demo").innerHTML = xhttp.responseText;
+            };
+            xhttp.open("GET", "https://jsonplaceholder.typicode.com/users/1", true);
+            xhttp.send();
+        }
+            */
+
+        function llamar3(){
+            let URL = "https://jsonplaceholder.typicode.com/users/1"
+            let parametros = ""
+            fetch(URL)
+            .then( async respuesta => {
+                console.log(respuesta.status)
+                datos = await respuesta.json() //deserializa la petición 
+                console.log(datos)
+                return datos
+
+            })
+            .catch(error => {
+                console.log("ojo:" + error)
+            })
+        }
+    </script>
+</body>
+</html>
